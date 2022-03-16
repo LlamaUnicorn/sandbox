@@ -14,7 +14,7 @@ class Person:
 
     
 
-p1 = Person("John", 36)
+p1 = Person()
 p1.myfunc()
 p1.set_name('Jeff')
 p1.set_age(33)
