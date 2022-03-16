@@ -1,27 +1,21 @@
-import json
-import requests
+class Person:
+    def __init__(self, name='Adam', age=13):
+        self.name = name
+        self.age = age
+        
+    def myfunc(self):
+        print("Hello my name is", self.name, 'my age is', self.age)
 
-url = 'https://api.exchangerate.host/convert?from=USD&to=RUB&amount=10'
-response = requests.get(url)
-data = response.json()
+    def set_name(self, name):
+        self.name = name
 
-print(data['result'])
+    def set_age(self, age):
+        self.age = age
 
+    
 
-
-# import requests
-# import json
-
-# url = 'https://api.exchangerate.host/convert?from=USD&to=RUB'
-# response = requests.get(url)
-# data = response.json()
-
-# print(data['info']['rate'])
-# print(round(data['info']['rate'], 2))
-
-
-
-# {'motd': {'msg': 'If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.', 'url': 'https://exchangerate.host/#/donate'}, 'success': True, 'query': {'from': 'USD', 'to': 'EUR', 'amount': 1}, 'info': {'rate': 0.910841}, 'historical': False, 'date': '2022-03-15', 'result': 0.910841}
-
-
-# {'motd': {'msg': 'If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.', 'url': 'https://exchangerate.host/#/donate'}, 'success': True, 'query': {'from': 'USD', 'to': 'RUB', 'amount': 1}, 'info': {'rate': 109.405222}, 'historical': False, 'date': '2022-03-16', 'result': 109.405222}
+p1 = Person("John", 36)
+p1.myfunc()
+p1.set_name('Jeff')
+p1.set_age(33)
+p1.myfunc()
