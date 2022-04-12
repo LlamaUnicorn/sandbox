@@ -31,7 +31,7 @@ for word in check_list_no_sp_chars:
                 censored_word.append(char)
             else:
                 censored_word.append(char)
-        print('censored_word', censored_word)
+        print('censored_list', censored_word)
         result = ''.join(censored_word)
         print('result after censoring:', result)
         check_list[i] = result
