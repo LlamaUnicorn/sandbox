@@ -7,7 +7,7 @@ abc = [
 profanity = ['cunt', 'fag']
 print('profanity:', profanity)
 
-check = 'You fag! Stupid Cunt!'
+check = 'You fag! Stupid Cunt! \nEdge case: Fag\'s voice'
 print('check text:', check)
 
 check_list = check.split()
