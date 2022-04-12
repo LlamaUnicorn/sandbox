@@ -1,65 +1,43 @@
-censored = ['news', 'stupid']
-print('censored:', censored)
+abc = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+    'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D',
+    'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+]
+profanity = ['cunt', 'fag']
+print('profanity:', profanity)
 
-news_title = 'Breaking news! This stupid president does unthinkable!'
+check = 'You fag! Stupid Cunt!'
+print('check text:', check)
 
-split_title_special_chars = news_title.split()
-print('split_title_special_chars:', split_title_special_chars)
-split_title_no_chars = [j.strip('.,!?:;').lower() for j in split_title_special_chars]
-print('no special chars split:', split_title_no_chars)
-# split_title_comprehension2 = [[j.strip('.,').lower() for j in i] for i in news_title]
-# print('list comprehension: ', news_title)
-# print(type(split_title_comprehension2))
-# print(split_title_comprehension[0])
+check_list = check.split()
+print('check_list:', check_list)
+check_list_no_sp_chars = [j.strip('.,!?:;').lower() for j in check_list]
+print('check_list_no_sp_chars:', check_list_no_sp_chars)
 
-# print('this is split_title: ', split_title)
 i = 0
-for word in split_title_no_chars:
-    if word in censored:
-        list_word = list(word)
-        print('list_word:', list_word)
+print('loops are next')
+
+for word in check_list_no_sp_chars:
+    print('word:', word)
+    if word in profanity:
+        print('this is profanity')
+        x = list(check_list[i])
+        print('x:', x)
         censored_word = []
-        for letter in word:
-            letter = '*'
-            censored_word.append(letter)
-        result = "".join(censored_word)
-        print('censored result in for loop:', result)
-        split_title_no_chars[i] = result
+        for char in x:
+            if char in abc:
+                char = '*'
+                censored_word.append(char)
+            else:
+                censored_word.append(char)
+        print('censored_word', censored_word)
+        result = ''.join(censored_word)
+        print('result after censoring:', result)
+        check_list[i] = result
     i += 1
+    print('i', i)
 
-# for word in split_title_no_chars:
-#     if word in censored:
-#         list_word = list(word)
-#         print('list_word:', list_word)
-#         censored_list_word = '*' * len(list_word)
-#         # word = '*' * len(list_word)
-#         word = censored_list_word
-#         print(word)
-        
-# censored_title = [list(word) for word in split_title_no_chars]
-print('this is censored:', split_title_no_chars)
-
-# How to change the original list after censoring with *?
-
-
-# name = 'Ben'
-# word = list(name)
-# print(word)
-# word = '*' * len(name)
-# print(word)
-
-
-# l = [ ['Hello.', 'My', 'World,'] ]
-# res = [[j.strip('.,').lower() for j in i] for i in l]
-# print(res)
-
-abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-print('-'*20)
-check_word = 'news'
-if check_word in censored:
-    censored_word = []
-    for letter in check_word:
-        letter = '*'
-        censored_word.append(letter)
-    result = "".join(censored_word)
-    print('censored result:', result)
+print('check_list:', check_list)
+censored_text = ' '.join(check_list)
+print('final censored text:', censored_text)
